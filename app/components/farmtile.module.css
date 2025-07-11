@@ -1,0 +1,67 @@
+.farmTile {
+  width: 80px;
+  height: 80px;
+  background-color: #8B4513;
+  border: 2px solid #654321;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.farmTile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Tohum ekildi - T */
+.farmTile.planted {
+  background-color: #90EE90;
+  border-color: #32CD32;
+  color: #2d5a27;
+}
+
+/* Fidan - F */
+.farmTile.sprout {
+  background-color: #98FB98;
+  border-color: #00FF00;
+  color: #1a4d1a;
+}
+
+/* Bitki - B */
+.farmTile.plant {
+  background-color: #228B22;
+  border-color: #006400;
+  color: white;
+}
+
+/* Çiçek - Ç */
+.farmTile.flower {
+  background-color: #FFD700;
+  border-color: #FFA500;
+  color: #8B4513;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Kurumuş - K */
+.farmTile.dried {
+  background-color: #8B4513;
+  border-color: #654321;
+  color: #D2B48C;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #FFD700;
+  }
+  to {
+    box-shadow: 0 0 20px #FFD700;
+  }
+}
