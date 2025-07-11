@@ -1,12 +1,35 @@
 "use client";
 import styles from "./page.module.css";
 import FarmTile from "../components/FarmTile";
+import { useBalance } from "../contexts/BalanceContext";
+import { useRouter } from "next/navigation";
 
 export default function Game() {
+  const { balance, seedStock } = useBalance();
+  const router = useRouter();
+
+  const handleStoreClick = () => {
+    router.push("/store");
+  };
+
   return (
     <div className={styles.gameContainer}>
-      <h1 className={styles.title}>Farm Game</h1>
       
+      <div className={styles.balanceDisplay}>
+        <h2>💰 Bakiye: {balance}$</h2>
+      </div>
+
+      
+      <div className={styles.seedDisplay}>
+        <h2>🌱 Tohum: {seedStock} adet</h2>
+      </div>
+
+      
+      <button className={styles.storeBtn} onClick={handleStoreClick}>
+         Mağaza
+      </button>
+      
+      <h1 className={styles.title}>Farm Game</h1>
       
       <div className={styles.farmGrid}>
         <FarmTile id={0} />
