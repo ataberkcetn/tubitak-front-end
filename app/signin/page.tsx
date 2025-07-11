@@ -24,7 +24,7 @@ export default function Home() {
       setUsername("");
       setPassword("");
       alert("Signed in successfully!");
-      router.push("/");
+      router.push("/game");
     } else {
       alert("Invalid username or password please try again.");
     }
